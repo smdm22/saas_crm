@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Smdm\SaasCrm\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class SaasCrmCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'saas-crm';
 
     public $description = 'My command';
 
