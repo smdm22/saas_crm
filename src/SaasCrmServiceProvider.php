@@ -2,9 +2,9 @@
 
 namespace Smdm\SaasCrm;
 
+use Smdm\SaasCrm\Commands\SaasCrmCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Smdm\SaasCrm\Commands\SaasCrmCommand;
 
 class SaasCrmServiceProvider extends PackageServiceProvider
 {
