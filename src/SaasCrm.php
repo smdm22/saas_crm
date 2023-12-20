@@ -17,10 +17,8 @@ class SaasCrm
         return SaasManufactureController::search($name);
     }
 
-
     public static function createManufacture($data)
     {
         return SaasManufactureController::create($data);
     }
-
 }
