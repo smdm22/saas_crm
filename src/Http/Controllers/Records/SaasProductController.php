@@ -11,21 +11,48 @@ class SaasProductController
     {
         $token = SaasTokenCheck::getToken();
 
-        if (! $token) {
+        if (!$token) {
             return null;
         }
 
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token,
+                'Authorization' => 'Bearer ' . $token,
             ],
         ]);
 
         try {
 
-            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/product/search', [
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/') . '/product/search', [
                 'json' => ['query' => $phrase],
+            ]);
+
+            return json_decode($response->getBody(), true);
+        } catch (\Exception $e) {
+            // Handle the exception or log it
+            return null; // or return a meaningful error message
+        }
+    }
+    public static function searchByNameAndManufacturerId($product_name, $manufacture_id)
+    {
+        $token = SaasTokenCheck::getToken();
+
+        if (!$token) {
+            return null;
+        }
+
+        $client = new Client([
+            'base_uri' => config('saas-crm.saas_crm_api_base_url'),
+            'headers' => [
+                'Authorization' => 'Bearer ' . $token,
+            ],
+        ]);
+
+        try {
+
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/') . '/product/search', [
+                'json' => ['query' => $product_name, 'manufacture_id' => $manufacture_id],
             ]);
 
             return json_decode($response->getBody(), true);

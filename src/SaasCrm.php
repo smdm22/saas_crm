@@ -11,7 +11,11 @@ class SaasCrm
     {
         return SaasProductController::search($phrase);
     }
-
+    public static function productsSearchByNameAndManufacturerId($product_name,$manufacture_id)
+    {
+        return SaasProductController::searchByNameAndManufacturerId($product_name,$manufacture_id);
+    }
+    
     public static function manufacturesSearch($name)
     {
         return SaasManufactureController::search($name);
