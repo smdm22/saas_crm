@@ -17,6 +17,11 @@ class SaasCrm
         return SaasProductController::searchByNameAndManufacturerId($product_name, $manufacture_id);
     }
 
+    public static function createSingleProduct($data)
+    {
+        return SaasProductController::createSingleProduct($data);
+    }
+
     public static function manufacturesSearch($name)
     {
         return SaasManufactureController::search($name);
