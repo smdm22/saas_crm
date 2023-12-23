@@ -11,6 +11,10 @@ class SaasCrm
     {
         return SaasProductController::search($phrase);
     }
+    public static function getLatestProducts($count)
+    {
+        return SaasProductController::getLatestProducts($count);
+    }
 
     public static function productsSearchByNameAndManufacturerId($product_name, $manufacture_id)
     {
