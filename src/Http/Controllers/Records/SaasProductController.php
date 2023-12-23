@@ -34,6 +34,7 @@ class SaasProductController
             return null; // or return a meaningful error message
         }
     }
+
     public static function getLatestProducts($count)
     {
         $token = SaasTokenCheck::getToken();
@@ -61,6 +62,7 @@ class SaasProductController
             return null; // or return a meaningful error message
         }
     }
+
     public static function searchByNameAndManufacturerId($product_name, $manufacture_id)
     {
         $token = SaasTokenCheck::getToken();
