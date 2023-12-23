@@ -63,7 +63,8 @@ class SaasProductController
         }
     }
 
-    public static function productsSearchById($product_id) {
+    public static function productsSearchById($product_id)
+    {
         $token = SaasTokenCheck::getToken();
 
         if (! $token) {
@@ -88,7 +89,7 @@ class SaasProductController
             // Handle the exception or log it
             return null; // or return a meaningful error message
         }
-        
+
     }
 
     public static function createSingleProduct($data = [])
