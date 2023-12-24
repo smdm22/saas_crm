@@ -119,6 +119,7 @@ class SaasProductController
         }
 
     }
+
     public static function getProductsByIds($ids)
     {
         $token = SaasTokenCheck::getToken();
