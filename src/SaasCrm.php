@@ -26,7 +26,10 @@ class SaasCrm
     {
         return SaasProductController::productsSearchById($product_id);
     }
-
+    public static function getProductsByIds($ids)
+    {
+        return SaasProductController::getProductsByIds($ids);
+    }
     public static function createSingleProduct($data)
     {
         return SaasProductController::createSingleProduct($data);
