@@ -2,6 +2,7 @@
 
 namespace Smdm\SaasCrm;
 
+use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasManufactureController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasProductController;
 
@@ -45,5 +46,10 @@ class SaasCrm
     public static function createManufacture($data)
     {
         return SaasManufactureController::create($data);
+    }
+
+    public static function getLeadByEmailAddress($email) {
+        return SaasLeadController::getLeadByEmailAddress($email);
+
     }
 }
