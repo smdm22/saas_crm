@@ -52,4 +52,9 @@ class SaasCrm
         return SaasLeadController::getLeadByEmailAddress($email);
 
     }
+
+    public static function createLead($email) {
+        return SaasLeadController::create($email);
+
+    }
 }
