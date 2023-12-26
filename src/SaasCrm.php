@@ -54,7 +54,8 @@ class SaasCrm
 
     }
 
-    public static function createLead($email) {
+    public static function createLead($email)
+    {
         return SaasLeadController::create($email);
 
     }
