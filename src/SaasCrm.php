@@ -48,7 +48,8 @@ class SaasCrm
         return SaasManufactureController::create($data);
     }
 
-    public static function getLeadByEmailAddress($email) {
+    public static function getLeadByEmailAddress($email)
+    {
         return SaasLeadController::getLeadByEmailAddress($email);
 
     }
