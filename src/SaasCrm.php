@@ -2,6 +2,7 @@
 
 namespace Smdm\SaasCrm;
 
+use Smdm\SaasCrm\Http\Controllers\Records\SaasExcessController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasManufactureController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasProductController;
@@ -59,4 +60,16 @@ class SaasCrm
         return SaasLeadController::create($email);
 
     }
+
+
+    public static function excessSearchById($excess_id)
+    {
+        return SaasExcessController::excessSearchById($excess_id);
+    }
+
+    public static function availabilitySearchById($excess_id)
+    {
+        return SaasExcessController::availabilitySearchById($excess_id);
+    }
+
 }
