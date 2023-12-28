@@ -2,6 +2,7 @@
 
 namespace Smdm\SaasCrm;
 
+use Smdm\SaasCrm\Http\Controllers\Records\SaasAvailabilityController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasExcessController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasManufactureController;
@@ -68,6 +69,6 @@ class SaasCrm
 
     public static function availabilitySearchById($excess_id)
     {
-        return SaasExcessController::availabilitySearchById($excess_id);
+        return SaasAvailabilityController::availabilitySearchById($excess_id);
     }
 }
