@@ -35,7 +35,6 @@ class SaasExcessController
         }
     }
 
-
     public static function excessSearchById($excess_id)
     {
         $token = SaasTokenCheck::getToken();

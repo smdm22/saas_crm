@@ -61,7 +61,6 @@ class SaasCrm
 
     }
 
-
     public static function excessSearchById($excess_id)
     {
         return SaasExcessController::excessSearchById($excess_id);
@@ -71,5 +70,4 @@ class SaasCrm
     {
         return SaasExcessController::availabilitySearchById($excess_id);
     }
-
 }

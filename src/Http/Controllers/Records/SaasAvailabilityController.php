@@ -35,7 +35,6 @@ class SaasAvailabilityController
         }
     }
 
-
     public static function availabilitySearchById($availability_id)
     {
         $token = SaasTokenCheck::getToken();
@@ -64,6 +63,4 @@ class SaasAvailabilityController
         }
 
     }
-
- 
 }
