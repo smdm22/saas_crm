@@ -148,7 +148,7 @@ class SaasProductController
         }
 
     }
-    
+
     public static function getProductAvailability($product_id, $days)
     {
         $token = SaasTokenCheck::getToken();
@@ -167,7 +167,7 @@ class SaasProductController
         try {
 
             $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/product/get-availability', [
-                'json' => ['product_id' => $product_id, 'days'=>$days],
+                'json' => ['product_id' => $product_id, 'days' => $days],
             ]);
 
             return json_decode($response->getBody(), true);

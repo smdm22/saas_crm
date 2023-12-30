@@ -34,10 +34,10 @@ class SaasCrm
     {
         return SaasProductController::getProductsByIds($ids);
     }
-    
-    public static function getProductAvailability($product_id,$days)
+
+    public static function getProductAvailability($product_id, $days)
     {
-        return SaasProductController::getProductAvailability($product_id,$days);
+        return SaasProductController::getProductAvailability($product_id, $days);
     }
 
     public static function createSingleProduct($data)
