@@ -178,7 +178,7 @@ class SaasProductController
 
     }
 
-    public static function getProductExcesses($product_id, $days)
+    public static function getProductExcesses($product_id)
     {
         $token = SaasTokenCheck::getToken();
 
@@ -196,7 +196,7 @@ class SaasProductController
         try {
 
             $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/product/get-excess', [
-                'json' => ['product_id' => $product_id, 'days' => $days],
+                'json' => ['product_id' => $product_id],
             ]);
 
             return json_decode($response->getBody(), true);
