@@ -40,6 +40,11 @@ class SaasCrm
         return SaasProductController::getProductAvailability($product_id, $days);
     }
 
+    public static function getProductExcesses($product_id, $days)
+    {
+        return SaasProductController::getProductExcesses($product_id, $days);
+    }
+
     public static function createSingleProduct($data)
     {
         return SaasProductController::createSingleProduct($data);
