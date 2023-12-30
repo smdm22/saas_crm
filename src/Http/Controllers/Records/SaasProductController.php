@@ -148,6 +148,35 @@ class SaasProductController
         }
 
     }
+    
+    public static function getProductAvailability($product_id, $days)
+    {
+        $token = SaasTokenCheck::getToken();
+
+        if (! $token) {
+            return null;
+        }
+
+        $client = new Client([
+            'base_uri' => config('saas-crm.saas_crm_api_base_url'),
+            'headers' => [
+                'Authorization' => 'Bearer '.$token,
+            ],
+        ]);
+
+        try {
+
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/product/get-availability', [
+                'json' => ['product_id' => $product_id, 'days'=>$days],
+            ]);
+
+            return json_decode($response->getBody(), true);
+        } catch (\Exception $e) {
+            // Handle the exception or log it
+            return null; // or return a meaningful error message
+        }
+
+    }
 
     public static function createSingleProduct($data = [])
     {
