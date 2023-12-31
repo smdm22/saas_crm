@@ -7,6 +7,7 @@ use Smdm\SaasCrm\Http\Controllers\Records\SaasExcessController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasManufactureController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasProductController;
+use Smdm\SaasCrm\Http\Controllers\Records\SaasRFQController;
 
 class SaasCrm
 {
@@ -80,5 +81,11 @@ class SaasCrm
     public static function availabilitySearchById($excess_id)
     {
         return SaasAvailabilityController::availabilitySearchById($excess_id);
+    }
+
+    public static function createSingleRFQ($data)
+    {
+        return SaasRFQController::createSingleRFQ($data);
+
     }
 }
