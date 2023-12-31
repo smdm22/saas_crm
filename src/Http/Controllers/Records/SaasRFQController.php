@@ -7,8 +7,6 @@ use Smdm\SaasCrm\Http\Controllers\Auth\SaasTokenCheck;
 
 class SaasRFQController
 {
-
-
     public static function createSingleRFQ($data = [])
     {
         $token = SaasTokenCheck::getToken();
