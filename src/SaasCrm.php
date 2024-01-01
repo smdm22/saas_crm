@@ -91,6 +91,6 @@ class SaasCrm
     }
     public static function getSaasCrmAccount($account_id)
     {
-        return SaasAccountController::getCrmAccount($account_id);
+        return SaasAccountController::getCrmAccountById($account_id);
     }
 }
