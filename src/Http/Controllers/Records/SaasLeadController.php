@@ -30,7 +30,7 @@ class SaasLeadController
 
             return json_decode($response->getBody(), true);
         } catch (\Exception $e) {
-            return $e;
+            return null;
         }
     }
 

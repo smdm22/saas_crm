@@ -2,6 +2,7 @@
 
 namespace Smdm\SaasCrm;
 
+use Smdm\SaasCrm\Http\Controllers\Records\SaasAccountController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasAvailabilityController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasExcessController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
@@ -87,5 +88,9 @@ class SaasCrm
     {
         return SaasRFQController::createSingleRFQ($data);
 
+    }
+    public static function getSaasCrmAccount($account_id)
+    {
+        return SaasAccountController::getCrmAccount($account_id);
     }
 }
