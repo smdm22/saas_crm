@@ -7,7 +7,8 @@ use Smdm\SaasCrm\Http\Controllers\Auth\SaasTokenCheck;
 
 class SaasAccountController
 {
-    public static function getCrmAccountById($account_id){
+    public static function getCrmAccountById($account_id)
+    {
         $token = SaasTokenCheck::getToken();
 
         if (! $token) {

@@ -89,6 +89,7 @@ class SaasCrm
         return SaasRFQController::createSingleRFQ($data);
 
     }
+
     public static function getSaasCrmAccount($account_id)
     {
         return SaasAccountController::getCrmAccountById($account_id);
