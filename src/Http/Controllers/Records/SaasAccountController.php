@@ -34,7 +34,7 @@ class SaasAccountController
         }
     }
 
-    public static function getAccountRFQs($account_id,$fields=null,$conditions=null)
+    public static function getAccountRFQs($account_id, $fields = null, $conditions = null)
     {
         $token = SaasTokenCheck::getToken();
 
@@ -51,7 +51,7 @@ class SaasAccountController
 
         try {
             $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/account/get-rfq', [
-                'json' => ['account_id' => $account_id, 'fields' => $fields , 'conditions'=>$conditions],
+                'json' => ['account_id' => $account_id, 'fields' => $fields, 'conditions' => $conditions],
             ]);
 
             return json_decode($response->getBody(), true);
@@ -59,6 +59,6 @@ class SaasAccountController
             // Handle the exception or log it
             return null; // or return a meaningful error message
         }
-            
+
     }
 }

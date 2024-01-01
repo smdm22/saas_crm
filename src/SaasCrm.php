@@ -94,8 +94,9 @@ class SaasCrm
     {
         return SaasAccountController::getCrmAccountById($account_id);
     }
-    public static function getAccountRFQs($account_id,$fields=null,$conditions=null)
+
+    public static function getAccountRFQs($account_id, $fields = null, $conditions = null)
     {
-        return SaasAccountController::getAccountRFQs($account_id,$fields,$conditions);
+        return SaasAccountController::getAccountRFQs($account_id, $fields, $conditions);
     }
 }
