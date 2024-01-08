@@ -80,14 +80,14 @@ class SaasRFQController
 
         try {
 
-            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/rfq/getrfq', [
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/rfq/get-by-id', [
                 'json' => ['rfq_id' => $rfq_id],
             ]);
 
             return json_decode($response->getBody(), true);
         } catch (\Exception $e) {
             // Handle the exception or log it
-            return null; // or return a meaningful error message
+            return $e; // or return a meaningful error message
         }
 
     }
