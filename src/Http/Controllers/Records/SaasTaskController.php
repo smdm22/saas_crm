@@ -7,8 +7,6 @@ use Smdm\SaasCrm\Http\Controllers\Auth\SaasTokenCheck;
 
 class SaasTaskController
 {
-
-
     public static function createSingleTask($data = [])
     {
         $token = SaasTokenCheck::getToken();
@@ -35,5 +33,4 @@ class SaasTaskController
             return null;
         }
     }
-
 }
