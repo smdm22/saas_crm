@@ -9,6 +9,7 @@ use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasManufactureController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasProductController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasRFQController;
+use Smdm\SaasCrm\Http\Controllers\Records\SaasTaskController;
 
 class SaasCrm
 {
@@ -114,5 +115,10 @@ class SaasCrm
     public static function getAccountRFQs($account_id, $fields = null, $conditions = null)
     {
         return SaasAccountController::getAccountRFQs($account_id, $fields, $conditions);
+    }
+
+    public static function createSingleTask($data)
+    {
+        return SaasTaskController::createSingleTask($data);
     }
 }
