@@ -100,9 +100,9 @@ class SaasCrm
         return SaasRFQController::rfqSearchById($rfq_id);
     }
 
-    public static function createRfqFromBom($masterBomId,$masterBomItemDetails,$contact)
+    public static function createRfqFromBom($masterBomId, $masterBomItemDetails, $contact)
     {
-        return SaasRFQController::createRfqFromBom($masterBomId,$masterBomItemDetails,$contact);
+        return SaasRFQController::createRfqFromBom($masterBomId, $masterBomItemDetails, $contact);
 
     }
 

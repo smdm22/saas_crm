@@ -92,7 +92,6 @@ class SaasRFQController
 
     }
 
-
     public static function createRfqFromBom($masterBomId = null, $masterBomItemDetails = null, $contact = null)
     {
         $token = SaasTokenCheck::getToken();
@@ -111,9 +110,9 @@ class SaasRFQController
         try {
             $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/rfq/create-rfq-from-bom', [
                 'json' => [
-                    'masterBomId'=>$masterBomId,
-                    'masterBomItemDetails'=>$masterBomItemDetails,
-                    'contact'=>$contact,
+                    'masterBomId' => $masterBomId,
+                    'masterBomItemDetails' => $masterBomItemDetails,
+                    'contact' => $contact,
                 ],
             ]);
 
