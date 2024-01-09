@@ -52,6 +52,12 @@ class SaasCrm
         return SaasProductController::createSingleProduct($data);
     }
 
+
+    public static function getProductLookUp($data)
+    {
+        return SaasProductController::getProductLookUp($data);
+    }
+
     public static function manufacturesSearch($name)
     {
         return SaasManufactureController::search($name);
