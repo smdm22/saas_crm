@@ -251,7 +251,7 @@ class SaasProductController
 
         try {
             $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/product/get-lookup', [
-                'json' => $data,
+                'json' =>['input_data'=> $data],
             ]);
 
             return json_decode($response->getBody(), true);
