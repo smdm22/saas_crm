@@ -60,8 +60,8 @@ class SaasAccountController
             return null; // or return a meaningful error message
         }
 
-
     }
+
     public static function getAccountQuotes($account_id, $fields = null, $conditions = null)
     {
         $token = SaasTokenCheck::getToken();
