@@ -95,6 +95,11 @@ class SaasCrm
         return SaasAvailabilityController::availabilitySearchById($excess_id);
     }
 
+    public static function createSingleAvailability($data)
+    {
+        return SaasAvailabilityController::createSingleAvailability($data);
+    }
+
     public static function createSingleRFQ($data)
     {
         return SaasRFQController::createSingleRFQ($data);
