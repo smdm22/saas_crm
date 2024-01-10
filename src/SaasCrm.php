@@ -122,6 +122,16 @@ class SaasCrm
         return SaasAccountController::getAccountQuotes($account_id, $fields, $conditions);
     }
 
+    public static function getAccountSaleOrders($account_id, $fields = null, $conditions = null)
+    {
+        return SaasAccountController::getAccountSaleOrders($account_id, $fields, $conditions);
+    }
+
+    public static function getAccountInvoices($account_id, $fields = null, $conditions = null)
+    {
+        return SaasAccountController::getAccountInvoices($account_id, $fields, $conditions);
+    }
+
     public static function createSingleTask($data)
     {
         return SaasTaskController::createSingleTask($data);
