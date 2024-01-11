@@ -9,6 +9,7 @@ use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasManufactureController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasProductController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasRFQController;
+use Smdm\SaasCrm\Http\Controllers\Records\SaasSaleOrderController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasTaskController;
 
 class SaasCrm
@@ -115,6 +116,11 @@ class SaasCrm
     {
         return SaasRFQController::createRfqFromBom($masterBomId, $masterBomItemDetails, $contact);
 
+    }
+
+    public static function saleOrderSearchById($salesorder_id)
+    {
+        return SaasSaleOrderController::saleOrderSearchById($salesorder_id);
     }
 
     public static function getSaasCrmAccount($account_id)
