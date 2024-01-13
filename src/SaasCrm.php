@@ -8,6 +8,7 @@ use Smdm\SaasCrm\Http\Controllers\Records\SaasExcessController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasManufactureController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasProductController;
+use Smdm\SaasCrm\Http\Controllers\Records\SaasQuoteController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasRFQController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasSaleOrderController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasTaskController;
@@ -154,8 +155,14 @@ class SaasCrm
         return SaasAccountController::getAccountInvoices($account_id, $fields, $conditions);
     }
 
+    public static function getQuoteById($quote_id)
+    {
+        return SaasQuoteController::getCrmQuoteById($quote_id);
+    }
+
     public static function createSingleTask($data)
     {
         return SaasTaskController::createSingleTask($data);
     }
+    
 }
