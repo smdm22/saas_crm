@@ -164,5 +164,4 @@ class SaasCrm
     {
         return SaasTaskController::createSingleTask($data);
     }
-    
 }
