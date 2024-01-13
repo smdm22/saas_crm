@@ -118,6 +118,12 @@ class SaasCrm
 
     }
 
+    public static function createSingleRFQAlternative($rfq_id,$product_id)
+    {
+        return SaasRFQController::createSingleRFQAlternative($rfq_id,$product_id);
+
+    }
+
     public static function saleOrderSearchById($salesorder_id)
     {
         return SaasSaleOrderController::saleOrderSearchById($salesorder_id);

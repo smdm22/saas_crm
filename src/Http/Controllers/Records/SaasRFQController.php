@@ -122,4 +122,36 @@ class SaasRFQController
             return null;
         }
     }
+
+    public static function createSingleRFQAlternative($rfq_id,$product_id){
+
+        $token = SaasTokenCheck::getToken();
+
+        if (! $token) {
+            return null;
+        }
+
+        $client = new Client([
+            'base_uri' => config('saas-crm.saas_crm_api_base_url'),
+            'headers' => [
+                'Authorization' => 'Bearer '.$token,
+            ],
+        ]);
+
+        try {
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/rfq/create-rfq-product-alternatives', [
+                'json' => [
+                    'rfq_id' => $rfq_id,
+                    'product_id' => $product_id,
+                    
+                ],
+            ]);
+
+            return json_decode($response->getBody(), true);
+        } catch (\Exception $e) {
+            // Consider logging the exception or handling it as needed
+            return null;
+        }
+
+    }
 }
