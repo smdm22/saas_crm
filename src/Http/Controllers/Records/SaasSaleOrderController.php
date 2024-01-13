@@ -7,7 +7,6 @@ use Smdm\SaasCrm\Http\Controllers\Auth\SaasTokenCheck;
 
 class SaasSaleOrderController
 {
-
     public static function saleOrderSearchById($salesorder_id)
     {
         $token = SaasTokenCheck::getToken();
@@ -36,6 +35,4 @@ class SaasSaleOrderController
         }
 
     }
-
-    
 }
