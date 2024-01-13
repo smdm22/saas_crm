@@ -123,7 +123,8 @@ class SaasRFQController
         }
     }
 
-    public static function createSingleRFQAlternative($rfq_id,$product_id){
+    public static function createSingleRFQAlternative($rfq_id, $product_id)
+    {
 
         $token = SaasTokenCheck::getToken();
 
@@ -143,7 +144,7 @@ class SaasRFQController
                 'json' => [
                     'rfq_id' => $rfq_id,
                     'product_id' => $product_id,
-                    
+
                 ],
             ]);
 

@@ -118,9 +118,9 @@ class SaasCrm
 
     }
 
-    public static function createSingleRFQAlternative($rfq_id,$product_id)
+    public static function createSingleRFQAlternative($rfq_id, $product_id)
     {
-        return SaasRFQController::createSingleRFQAlternative($rfq_id,$product_id);
+        return SaasRFQController::createSingleRFQAlternative($rfq_id, $product_id);
 
     }
 
