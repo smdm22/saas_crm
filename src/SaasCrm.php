@@ -9,6 +9,7 @@ use Smdm\SaasCrm\Http\Controllers\Records\SaasInvoiceController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasManufactureController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasProductController;
+use Smdm\SaasCrm\Http\Controllers\Records\SaasQuoteController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasRFQController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasSaleOrderController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasTaskController;
@@ -119,9 +120,9 @@ class SaasCrm
 
     }
 
-    public static function createSingleRFQAlternative($rfq_id,$product_id)
+    public static function createSingleRFQAlternative($rfq_id, $product_id)
     {
-        return SaasRFQController::createSingleRFQAlternative($rfq_id,$product_id);
+        return SaasRFQController::createSingleRFQAlternative($rfq_id, $product_id);
 
     }
 
@@ -158,6 +159,11 @@ class SaasCrm
     public static function getAccountInvoices($account_id, $fields = null, $conditions = null)
     {
         return SaasAccountController::getAccountInvoices($account_id, $fields, $conditions);
+    }
+
+    public static function getQuoteById($quote_id)
+    {
+        return SaasQuoteController::getCrmQuoteById($quote_id);
     }
 
     public static function createSingleTask($data)
