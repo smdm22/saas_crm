@@ -5,6 +5,7 @@ namespace Smdm\SaasCrm;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasAccountController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasAvailabilityController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasExcessController;
+use Smdm\SaasCrm\Http\Controllers\Records\SaasInvoiceController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasLeadController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasManufactureController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasProductController;
@@ -127,6 +128,11 @@ class SaasCrm
     public static function saleOrderSearchById($salesorder_id)
     {
         return SaasSaleOrderController::saleOrderSearchById($salesorder_id);
+    }
+
+    public static function invoiceSearchById($invoice_id)
+    {
+        return SaasInvoiceController::invoiceSearchById($invoice_id);
     }
 
     public static function getSaasCrmAccount($account_id)
