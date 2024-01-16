@@ -46,12 +46,11 @@ class SaasCrm
         return SaasProductController::getProductAvailability($product_id, $days);
     }
 
-    public static function getProductAvailabilityCondition($product_id,$created_at=null, $fields = null, $conditions = null)
+    public static function getProductAvailabilityCondition($product_id, $created_at = null, $fields = null, $conditions = null)
     {
-        return SaasProductController::getProductAvailabilityCondition($product_id,$created_at, $fields, $conditions);
+        return SaasProductController::getProductAvailabilityCondition($product_id, $created_at, $fields, $conditions);
     }
 
-    
     public static function getProductExcesses($product_id, $days)
     {
         return SaasProductController::getProductExcesses($product_id, $days);

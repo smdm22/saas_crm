@@ -260,7 +260,8 @@ class SaasProductController
             return null;
         }
     }
-    public static function getProductAvailabilityCondition($product_id,$created_at=null, $fields = null, $conditions = null)
+
+    public static function getProductAvailabilityCondition($product_id, $created_at = null, $fields = null, $conditions = null)
     {
         $token = SaasTokenCheck::getToken();
 
@@ -279,9 +280,9 @@ class SaasProductController
             $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/product/get-availability-conditions', [
                 'json' => [
                     'product_id' => $product_id,
-                    'created_at'=>$created_at,
+                    'created_at' => $created_at,
                     'fields' => $fields,
-                    'conditions' => $conditions
+                    'conditions' => $conditions,
                 ],
             ]);
 
