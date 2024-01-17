@@ -30,7 +30,7 @@ class SaasRFQController
             return json_decode($response->getBody(), true);
         } catch (\Exception $e) {
             // Consider logging the exception or handling it as needed
-            return $e->getMessage();
+            return null;
         }
     }
 
