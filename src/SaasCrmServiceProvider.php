@@ -19,7 +19,7 @@ class SaasCrmServiceProvider extends PackageServiceProvider
             ->name('saas-crm')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_saas-crm_table')
+            ->hasMigration('create_saas_crm_access_table')
             ->hasCommand(SaasCrmCommand::class);
     }
 }
