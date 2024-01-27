@@ -37,7 +37,10 @@ class SaasTokenCheck
 
             }
 
-            
+            return [
+                "access_token" => $crm_access->access_token,
+                "unified_token" => $crm_access->unified_token,
+            ];
         }else{
 
             $saas_token = self::login($client_id, $client_secret);
@@ -74,12 +77,14 @@ class SaasTokenCheck
                 'json' => [
                     'email' => $email,
                     'password' => $password,
+                    "user_type"=> "oauth",
+                    "user_subtype"=> null
                 ],
             ]);
 
             // Decode the response
             $responseData = json_decode($response->getBody(), true);
-
+            
             if (isset($responseData['token'])) {
                 // Log the user in or perform any other necessary actions
                 // For example, you might store the token in the session or use Laravel Passport for API authentication
