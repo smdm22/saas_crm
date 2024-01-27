@@ -3,16 +3,14 @@
 namespace Smdm\SaasCrm\Http\Controllers\Auth;
 
 use Carbon\Carbon;
-use Smdm\SaasCrm\Models\SaasCrmAccess;
 use GuzzleHttp\Client;
+use Smdm\SaasCrm\Models\SaasCrmAccess;
 
 class SaasTokenCheck
 {
-    
-
     public static function getToken()
     {
-        
+
         $crm_access = SaasCrmAccess::latest()->first();
 
         // info(['crm_access',$crm_access]);
@@ -22,12 +20,12 @@ class SaasTokenCheck
 
         if ($crm_access) {
             $expiry_time = Carbon::parse($crm_access->expiry_time);
-    
+
             // Check if the token has expired
             if ($expiry_time->lt(Carbon::now())) {
                 // Call a function to refresh the token
                 $saas_token = self::login($client_id, $client_secret);
-    
+
                 // Assuming refreshCRMToken returns an array with new tokens
                 $crm_access->access_token = $saas_token['access_token'];
                 $crm_access->unified_token = $saas_token['unified_token'];
@@ -38,13 +36,12 @@ class SaasTokenCheck
             }
 
             return [
-                "access_token" => $crm_access->access_token,
-                "unified_token" => $crm_access->unified_token,
+                'access_token' => $crm_access->access_token,
+                'unified_token' => $crm_access->unified_token,
             ];
-        }else{
+        } else {
 
             $saas_token = self::login($client_id, $client_secret);
-
 
             // Create a new token record in the database
             $crm_token = SaasCrmAccess::create([
@@ -60,11 +57,11 @@ class SaasTokenCheck
             return $saas_token;
 
         }
-    
+
         return null;
     }
 
-    public static function login($email,$password)
+    public static function login($email, $password)
     {
 
         $client = new Client([
@@ -73,18 +70,18 @@ class SaasTokenCheck
 
         try {
             // Make a request to your Saas CRM login endpoint
-            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/') . '/login', [
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/login', [
                 'json' => [
                     'email' => $email,
                     'password' => $password,
-                    "user_type"=> "oauth",
-                    "user_subtype"=> null
+                    'user_type' => 'oauth',
+                    'user_subtype' => null,
                 ],
             ]);
 
             // Decode the response
             $responseData = json_decode($response->getBody(), true);
-            
+
             if (isset($responseData['token'])) {
                 // Log the user in or perform any other necessary actions
                 // For example, you might store the token in the session or use Laravel Passport for API authentication
@@ -95,11 +92,10 @@ class SaasTokenCheck
             } else {
                 return response()->json(['message' => 'Login failed'], 401);
             }
-            
+
         } catch (\Exception $e) {
             // Consider logging the exception or handling it as needed
             return response()->json(['message' => 'Login failed'], 401);
         }
     }
 }
-

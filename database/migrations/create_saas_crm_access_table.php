@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
     public function up()
     {
         Schema::create('saas_crm_access', function (Blueprint $table) {
@@ -16,7 +15,7 @@ return new class extends Migration
             $table->string('access_token')->nullable();
             $table->string('unified_token')->nullable();
             $table->string('status')->nullable();
-            $table->string('expiry_time',20)->nullable();
+            $table->string('expiry_time', 20)->nullable();
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class SaasCrmAccess extends Model
         'access_token',
         'unified_token',
         'expiry_time',
-        'status'
+        'status',
 
     ];
 }

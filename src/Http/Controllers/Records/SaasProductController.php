@@ -18,8 +18,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
@@ -47,8 +47,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
@@ -76,8 +76,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
@@ -105,8 +105,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
@@ -135,8 +135,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
@@ -165,8 +165,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
@@ -195,8 +195,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
@@ -225,8 +225,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
@@ -253,8 +253,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
@@ -281,8 +281,8 @@ class SaasProductController
         $client = new Client([
             'base_uri' => config('saas-crm.saas_crm_api_base_url'),
             'headers' => [
-                'Authorization' => 'Bearer '.$token["access_token"],
-                'X-User-Unique-Token'  => $token["unified_token"], 
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
             ],
         ]);
 
