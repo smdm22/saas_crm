@@ -9,8 +9,8 @@ use Smdm\SaasCrm\Models\SaasCrmAccess;
 class SaasTokenCheck
 {
     public static function getToken()
-    { 
-        
+    {
+
         $crm_access = SaasCrmAccess::latest()->first();
 
         // info(['crm_access',$crm_access]);
