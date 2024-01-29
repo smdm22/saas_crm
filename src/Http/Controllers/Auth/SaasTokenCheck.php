@@ -13,7 +13,6 @@ class SaasTokenCheck
 
         $crm_access = SaasCrmAccess::latest()->first();
 
-
         $client_id = config('saas-crm.saas_crm_client_id');
         $client_secret = config('saas-crm.saas_crm_client_secret');
 
