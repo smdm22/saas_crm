@@ -13,7 +13,6 @@ class SaasTokenCheck
 
         $crm_access = SaasCrmAccess::latest()->first();
 
-        // info(['crm_access',$crm_access]);
 
         $client_id = config('saas-crm.saas_crm_client_id');
         $client_secret = config('saas-crm.saas_crm_client_secret');
@@ -21,12 +20,9 @@ class SaasTokenCheck
         if ($crm_access) {
             $expiry_time = Carbon::parse($crm_access->expiry_time);
 
-            // Check if the token has expired
-            if ($expiry_time->lt(Carbon::now())) {
-                // Call a function to refresh the token
+            if ($expiry_time->gt(Carbon::now())) { //TODO: check expiration if failed
                 $saas_token = self::login($client_id, $client_secret);
 
-                // Assuming refreshCRMToken returns an array with new tokens
                 $crm_access->access_token = $saas_token['access_token'];
                 $crm_access->unified_token = $saas_token['unified_token'];
                 $crm_access->save();
@@ -43,7 +39,6 @@ class SaasTokenCheck
 
             $saas_token = self::login($client_id, $client_secret);
 
-            // Create a new token record in the database
             $crm_token = SaasCrmAccess::create([
                 'client_id' => $client_id,
                 'client_secret' => $client_secret,
