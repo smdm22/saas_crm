@@ -176,6 +176,11 @@ class SaasCrm
         return SaasQuoteController::getCrmQuoteById($quote_id);
     }
 
+    public static function getQuotePDF($quote_id)
+    {
+        return SaasQuoteController::getQuotePDF($quote_id);
+    }
+
     public static function createSingleTask($data)
     {
         return SaasTaskController::createSingleTask($data);
