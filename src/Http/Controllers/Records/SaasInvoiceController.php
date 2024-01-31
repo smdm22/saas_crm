@@ -36,4 +36,35 @@ class SaasInvoiceController
         }
 
     }
+
+    public static function getInvoicePDF($invoice_id)
+    {
+        $token = SaasTokenCheck::getToken();
+
+        if (! $token) {
+            return null;
+        }
+
+        $client = new Client([
+            'base_uri' => config('saas-crm.saas_crm_api_base_url'),
+            'headers' => [
+                'Authorization' => 'Bearer '.$token['access_token'],
+                'X-User-Unique-Token' => $token['unified_token'],
+            ],
+        ]);
+
+        try {
+
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/invoice/' . $invoice_id . '/get-pdf', [
+                'json' => ['invoice_id' => $invoice_id],
+            ]);
+
+            return $response;
+
+        } catch (\Exception $e) {
+            // Handle the exception or log it
+            return null; // or return a meaningful error message
+        }
+
+    }
 }

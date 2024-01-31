@@ -146,6 +146,11 @@ class SaasCrm
         return SaasInvoiceController::invoiceSearchById($invoice_id);
     }
 
+    public static function getInvoicePDF($invoice_id)
+    {
+        return SaasInvoiceController::getInvoicePDF($invoice_id);
+    }
+
     public static function getSaasCrmAccount($account_id)
     {
         return SaasAccountController::getCrmAccountById($account_id);
