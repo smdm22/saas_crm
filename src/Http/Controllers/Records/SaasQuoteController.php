@@ -53,7 +53,7 @@ class SaasQuoteController
 
         try {
 
-            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/quote/' . $quote_id . '/get-pdf', [
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/quote/'.$quote_id.'/get-pdf', [
                 'json' => ['quote_id' => $quote_id],
             ]);
 
