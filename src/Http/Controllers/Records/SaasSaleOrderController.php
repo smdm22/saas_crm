@@ -59,7 +59,8 @@ class SaasSaleOrderController
                 'json' => ['salesorder_id' => $salesorder_id],
             ]);
 
-            return json_decode($response->getBody(), true);
+            return $response;
+
         } catch (\Exception $e) {
             // Handle the exception or log it
             return $e; // or return a meaningful error message
