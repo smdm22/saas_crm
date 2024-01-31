@@ -61,7 +61,7 @@ class SaasQuoteController
 
         } catch (\Exception $e) {
             // Handle the exception or log it
-            return $e; // or return a meaningful error message
+            return null; // or return a meaningful error message
         }
 
     }
