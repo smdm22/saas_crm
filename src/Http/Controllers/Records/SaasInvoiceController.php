@@ -55,7 +55,7 @@ class SaasInvoiceController
 
         try {
 
-            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/invoice/' . $invoice_id . '/get-pdf', [
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/invoice/'.$invoice_id.'/get-pdf', [
                 'json' => ['invoice_id' => $invoice_id],
             ]);
 
