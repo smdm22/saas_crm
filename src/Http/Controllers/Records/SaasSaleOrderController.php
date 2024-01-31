@@ -55,7 +55,7 @@ class SaasSaleOrderController
 
         try {
 
-            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/sales_order/' . $salesorder_id . '/get-pdf', [
+            $response = $client->request('POST', rtrim(config('saas-crm.saas_crm_api_version'), '/').'/sales_order/'.$salesorder_id.'/get-pdf', [
                 'json' => ['salesorder_id' => $salesorder_id],
             ]);
 
