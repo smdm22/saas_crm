@@ -136,6 +136,11 @@ class SaasCrm
         return SaasSaleOrderController::saleOrderSearchById($salesorder_id);
     }
 
+    public static function getSaleOrderPDF($salesorder_id)
+    {
+        return SaasSaleOrderController::getSaleOrderPDF($salesorder_id);
+    }
+
     public static function invoiceSearchById($invoice_id)
     {
         return SaasInvoiceController::invoiceSearchById($invoice_id);
