@@ -12,8 +12,8 @@ use Smdm\SaasCrm\Http\Controllers\Records\SaasProductController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasQuoteController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasRFQController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasSaleOrderController;
-use Smdm\SaasCrm\Http\Controllers\Records\SaasTaskController;
 use Smdm\SaasCrm\Http\Controllers\Records\SaasStatementController;
+use Smdm\SaasCrm\Http\Controllers\Records\SaasTaskController;
 
 class SaasCrm
 {
@@ -192,11 +192,13 @@ class SaasCrm
         return SaasTaskController::createSingleTask($data);
     }
 
-    public static function panelStatistics(){
+    public static function panelStatistics()
+    {
         return SaasStatementController::panelStatistics();
     }
 
-    public static function panelRfqStatisticsMonthly(){
+    public static function panelRfqStatisticsMonthly()
+    {
         return SaasStatementController::panelRfqStatisticsMonthly();
     }
 }

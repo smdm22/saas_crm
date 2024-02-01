@@ -5,7 +5,7 @@ namespace Smdm\SaasCrm\Http\Controllers\Records;
 use GuzzleHttp\Client;
 use Smdm\SaasCrm\Http\Controllers\Auth\SaasTokenCheck;
 
-class SaasStatementController 
+class SaasStatementController
 {
     public static function panelStatistics()
     {
@@ -66,6 +66,4 @@ class SaasStatementController
         }
 
     }
-
-  
 }
