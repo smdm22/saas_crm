@@ -37,7 +37,6 @@ class SaasTokenCheck
         } else {
 
             $saas_token = self::login($client_id, $client_secret);
-
             $crm_token = SaasCrmAccess::create([
                 'client_id' => $client_id,
                 'client_secret' => $client_secret,
@@ -68,8 +67,9 @@ class SaasTokenCheck
                 'json' => [
                     'email' => $email,
                     'password' => $password,
-                    'user_type' => 'oauth',
-                    'user_subtype' => null,
+                    'user_type' => 'system',
+                    'user_subtype' => 'oauth',
+
                 ],
             ]);
 
