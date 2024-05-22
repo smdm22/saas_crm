@@ -68,8 +68,8 @@ class SaasTokenCheck
                     'email' => $email,
                     'password' => $password,
                     'user_type' => 'system',
-                    'user_subtype' => "oauth",
-                    
+                    'user_subtype' => 'oauth',
+
                 ],
             ]);
 
